@@ -1,4 +1,86 @@
+# [<img src="public/logo.png" height="30" style="margin:0 5px" alt="Portfolio"/>](https://githiomi.github.io/HGHF) TOOLS AND EQUIPMENT MANAGEMENT DASHBOARD
+
+> Developed by <a href="http://github.com/githiomi">DANIEL GITHIOMI</a>
+
+## DESCRIPTION
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+This is the Full-Stack Test given by Dakri Cartons for the Full Stack Developer Position. The task is to create a dashboard using React or NextJS with Typescript preferably.
+
+## WEBSITE DESIGN REQUIREMENT
+
+The Figma design below shows the expected output of the NextJs project
+
+![Desgin](./public/dashboard_guideline.png)
+
+## PREVIEW
+
+Following the design requirements, the output of this project looks as follows:
+
+![Website Preview](./public//next.svg)
+
+## DEVELOPMENT STACK
+
+* Programming language: __Typescript__
+* Framework: __NextJs__
+
+## COMPATIBILITY
+
+Compatible with all browsers including Safari and Internet Explorer making sure it is responsive.
+
+## LOW LEVEL TECHNOLOGIES USED
+
+This portfolio was made entirely using Visual Studio Code using the following technologies:
+
+* HTML 5
+* CSS
+* TailwindCSS
+* TypeScript
+
+## KNOWN BUGS
+
+No bugs to report at the moment! the system works efficiently at 100% guaranteed.
+
+__Slow internet connection can result in faulty rendering of animations and images__
+
+## LIVE PAGES
+
+This repository has __NO__ active live pages
+
+## SETUP INSTRUCTIONS
+
+* Make sure to have __NodeJS__ runtime installed on the system
+  * If not installed, [download here](https://nodejs.org/en/download)
+
+* Git clone [this](https://www.github.com/githiomi/Test-Dashboard) into your terminal.  
+* Enter into the project directory using the __cd 'Test-Dashboard'__ command
+* Open a terminal that is open in the current working directory
+* Run the command below to run the application in development mode
+
+``` (Javasript)
+npm run dev
+```
+
+* To run the production ready version of the application, use the following command
+
+``` (Javasript)
+npm run start
+```
+
+## SUPPORT AND CONTACT INFORMATION
+
+Contact me through any of the following channels:
+
+* Slack: danielgithiomi
+* Email: [danielgithiomi](danielgithiomi@gmail.com)
+
+## LICENSES
+
+Click the following to access my license page: [Click-Here](https://githiomi.github.io/Privacy-Policy/)
+
+> Copyright (c) {2024} Daniel Githiomi.
+
 
 ## Getting Started
 
