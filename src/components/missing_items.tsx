@@ -5,12 +5,6 @@ interface MissingItem {
    teamMember: TeamMember;
 }
 
-interface TeamMember {
-   memberImage: string;
-   memberName: string;
-   memberTrophy: string;
-}
-
 export default function MissingItemsComponent() {
    const missingItems: MissingItem[] = [
       {
@@ -52,7 +46,7 @@ export default function MissingItemsComponent() {
             <h1 className="text-2xl font-bold">Missing Items</h1>
          </div>
 
-         <table className="table table-zebra">
+         <table className="table table-md">
             <thead>
                <th>Tool Ref</th>
                <th>Team Member</th>
@@ -60,23 +54,23 @@ export default function MissingItemsComponent() {
             </thead>
 
             <tbody>
-               {missingItems.map((item, index) => {
+               {missingItems.map((missingItem, index) => {
                   return (
                      <tr key={index}>
-                        <td>{item.toolRef}</td>
+                        <td>{missingItem.toolRef}</td>
                         <td className="flex items-center justify-center">
                            <Image
-                              src={item.teamMember.memberImage}
+                              src={missingItem.teamMember.memberImage}
                               alt="Team Member Iamge"
                               width="20"
                               height="20"
                               className="rounded"
                            />
 
-                           {item.teamMember.memberName}
+                           {missingItem.teamMember.memberName}
 
                            <Image
-                              src={item.teamMember.memberTrophy}
+                              src={missingItem.teamMember.memberTrophy}
                               alt="Team Member Trophy"
                               width="20"
                               height="20"

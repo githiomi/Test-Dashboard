@@ -19,7 +19,9 @@ const config: Config = {
       'darkbrown': "#665c5c",
       'black': "#000000",
       'white' : "#FFFFFF",
-      'gray' : '#dddfdf'
+      'gray' : '#dddfdf',
+      'green' : "#42b667",
+      'orange' : "#eb7600"
     }
   },
   plugins: [

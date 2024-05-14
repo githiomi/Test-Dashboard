@@ -8,15 +8,9 @@ interface RentalTool {
    duration:string;
 }
 
-interface TeamMember {
-   memberImage:string;
-   memberName:string;
-   memberTrophy:string;
-}
-
 export default function RentalToolsComponent() {
 
-   const rental_tools : RentalTool[] = [
+   const rentalTools : RentalTool[] = [
       {
          workorder:'01',
          toolref:6456,
@@ -64,7 +58,7 @@ export default function RentalToolsComponent() {
          <h1 className='text-2xl font-bold'>Rental Tools</h1>
       </div>
 
-      <table className="table table-zebra">
+      <table className="table table-md">
          <thead>
             <tr>
                <th>Work Order</th>
@@ -76,24 +70,24 @@ export default function RentalToolsComponent() {
             </tr>
          </thead>
       
-         <tbody>{rental_tools.map( (rental_tool, index) => {
+         <tbody>{rentalTools.map( (rentalTool, index) => {
                   return <tr key={index} className='text-center'>
-                           <td>{rental_tool.workorder}</td>
+                           <td>{rentalTool.workorder}</td>
                            <td>
-                              <span className="bg-gray px-2 py-1 rounded-md">{rental_tool.toolref}</span>
+                              <span className="bg-gray px-2 py-1 rounded-md">{rentalTool.toolref}</span>
                            </td>
                            <td className='flex items-center justify-center'>
                               <Image 
-                                 src={rental_tool.teammember.memberImage}
+                                 src={rentalTool.teammember.memberImage}
                                  alt="Team Member Iamge"
                                  width="20"
                                  height="20"
                                  className="rounded" />
 
-                              {rental_tool.teammember.memberName}
+                              {rentalTool.teammember.memberName}
 
                               <Image 
-                                 src={rental_tool.teammember.memberTrophy}
+                                 src={rentalTool.teammember.memberTrophy}
                                  alt="Team Member Trophy"
                                  width="20"
                                  height="20"
@@ -101,11 +95,11 @@ export default function RentalToolsComponent() {
                            </td>
                            <td>
                               <div className="status rounded-full bg-brown w-4 h-4 border-solid p-2 border-2 "></div>
-                              {rental_tool.status}
+                              {rentalTool.status}
                            </td>
-                           <td>{rental_tool.duration}</td>
+                           <td>{rentalTool.duration}</td>
                            <td>
-                              <button className="btn btn-outline btn-primary">Details</button>
+                              <button className="btn text-white btn-primary">Details</button>
                            </td>
                   </tr>
                })
