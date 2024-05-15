@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 
 interface RentalTool {
@@ -94,7 +95,14 @@ export default function RentalToolsComponent() {
                                  className="rounded" />
                            </td>
                            <td>
-                              <div className="status rounded-full bg-brown w-4 h-4 border-solid p-2 border-2 "></div>
+                              <div className={clsx(
+                                 "status rounded-full w-3 h-3 border-solid p-2 border-1",
+                                 {
+                                    'bg-orange' : rentalTool.status == 'Not Started',
+                                    'bg-primary' : rentalTool.status == 'In Progress',
+                                    'bg-green' : rentalTool.status == 'Completed',
+                                 }
+                              )}></div>
                               {rentalTool.status}
                            </td>
                            <td>{rentalTool.duration}</td>

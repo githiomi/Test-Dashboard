@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import clsx from 'clsx';
 
 interface ToolsAndEquipment {
    toolIcon: string;
@@ -48,7 +49,14 @@ export default function ToolsAndEquipmentAvailability() {
 
                      <td>{toolsAndEquipment.toolName}</td>
 
-                     <td><div className='radial-progress' style={{ "--value": toolsAndEquipment.progress }} role="progressbar">{toolsAndEquipment.progress}%</div></td>
+                     <td><div className={clsx('radial-progress',
+                        {
+                           'bg-green text-white': index == 0,
+                           'bg-orange text-white': index == 1,
+                        }
+                     )}
+                        style={{ "--value": toolsAndEquipment.progress }}
+                        role="progressbar">{toolsAndEquipment.progress}%</div></td>
                   </tr>
                })}
             </tbody>

@@ -1,6 +1,11 @@
+'use client'
+
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function SideNavigation(){
+
+   const pathName = usePathname();
 
    return <nav className="side-navigation w-22 bg-brown min-h-screen flex flex-col justify-between items-center p-6">
 
