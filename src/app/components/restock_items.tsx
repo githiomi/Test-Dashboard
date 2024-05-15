@@ -51,7 +51,7 @@ export default function RestockItemsComponent() {
                   {restockItem.toolOrEquipment}
                </td>
                <td>
-                  <div className="status rounded-full bg-orange w-2 h-2 p-2 border-solid border-black"></div>
+                  <div className='status rounded-full bg-orange w-2 h-2 p-2 border-solid border-black'></div>
                   {restockItem.status}
                </td>
                <td>

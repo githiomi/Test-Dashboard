@@ -10,12 +10,12 @@ export default function ToolsAndEquipmentAvailability() {
 
    const toolsAndEquipment: ToolsAndEquipment[] = [
       {
-         toolIcon: '/settings.png',
+         toolIcon: '/spanner.png',
          toolName: 'Rental Items',
          progress: 50
       },
       {
-         toolIcon: '/settings.png',
+         toolIcon: '/spare_parts.png',
          toolName: 'Spare Parts',
          progress: 75
       }
@@ -48,7 +48,7 @@ export default function ToolsAndEquipmentAvailability() {
 
                      <td>{toolsAndEquipment.toolName}</td>
 
-                     <td><div className="radial-progress" style={{ "--value": toolsAndEquipment.progress }} role="progressbar">{toolsAndEquipment.progress}%</div></td>
+                     <td><div className='radial-progress' style={{ "--value": toolsAndEquipment.progress }} role="progressbar">{toolsAndEquipment.progress}%</div></td>
                   </tr>
                })}
             </tbody>

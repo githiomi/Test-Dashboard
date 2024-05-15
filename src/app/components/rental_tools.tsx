@@ -15,8 +15,8 @@ export default function RentalToolsComponent() {
          workorder:'01',
          toolref:6456,
          teammember: {
-            memberImage: "/settings.png",
-            memberName: "Allan Norman",
+            memberImage: "/user_alex.jpeg",
+            memberName: "Alex Norman",
             memberTrophy: "/logo.png"
          },
          status: 'Completed',
@@ -26,7 +26,7 @@ export default function RentalToolsComponent() {
          workorder:'02',
          toolref:5665,
          teammember: {
-            memberImage: "/settings.png",
+            memberImage: "/user_razib.jpg",
             memberName: "Razib Rahman",
             memberTrophy: "/logo.png"
          },
@@ -37,7 +37,7 @@ export default function RentalToolsComponent() {
          workorder:'03',
          toolref:1775,
          teammember: {
-            memberImage: "/settings.png",
+            memberImage: "/user_luke.jpg",
             memberName: "Luke Norton",
             memberTrophy: "/logo.png"
          },
@@ -76,21 +76,21 @@ export default function RentalToolsComponent() {
                            <td>
                               <span className="bg-gray px-2 py-1 rounded-md">{rentalTool.toolref}</span>
                            </td>
-                           <td className='flex items-center justify-center'>
+                           <td className='flex items-center justify-center gap-[1rem] mt-1'>
                               <Image 
                                  src={rentalTool.teammember.memberImage}
                                  alt="Team Member Iamge"
-                                 width="20"
-                                 height="20"
-                                 className="rounded" />
+                                 width={50}
+                                 height={100}
+                                 className="bg-black rounded-full" />
 
                               {rentalTool.teammember.memberName}
 
                               <Image 
                                  src={rentalTool.teammember.memberTrophy}
                                  alt="Team Member Trophy"
-                                 width="20"
-                                 height="20"
+                                 width="40"
+                                 height="50"
                                  className="rounded" />
                            </td>
                            <td>

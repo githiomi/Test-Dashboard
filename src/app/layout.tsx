@@ -1,9 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import SideNavigation from "@/components/sidenav";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import SideNavigation from "@/app/components/sidenav";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  style: "normal",
+  weight: ["100", "300", "500", "700", "900"],
+  subsets: ["latin"]
+});
 
 export const metadata: Metadata = {
   authors: {
@@ -24,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light-mode">
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <div className="min-h-screen flex">
 
           <SideNavigation />

@@ -1,8 +1,9 @@
-import MissingItemsComponent from "@/components/missing_items";
-import RentalToolsComponent from "@/components/rental_tools";
-import RestockItemsComponent from "@/components/restock_items";
-import ToolsAndEquipmentAvailability from "@/components/tools_and_equipment";
-import WorkOrderStatusPage from "@/components/workorder_status";
+import MissingItemsComponent from "@/app/components/missing_items";
+import RentalToolsComponent from "@/app/components/rental_tools";
+import RestockItemsComponent from "@/app/components/restock_items";
+import ToolsAndEquipmentAvailability from "@/app/components/tools_and_equipment";
+import WorkOrderStatusPage from "@/app/components/workorder_status";
+import ReceptionSummaryPage from "./components/reception_summary";
 
 export default function Home() {
   return (
@@ -27,6 +28,8 @@ export default function Home() {
 
       <div className="bottomRow flex">
         <RestockItemsComponent />
+
+        <ReceptionSummaryPage />
       </div>
 
     </main>

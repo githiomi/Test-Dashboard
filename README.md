@@ -56,6 +56,12 @@ This repository has __NO__ active live pages
 * Git clone [this](https://www.github.com/githiomi/Test-Dashboard) into your terminal.  
 * Enter into the project directory using the __cd 'Test-Dashboard'__ command
 * Open a terminal that is open in the current working directory
+* Run the following command to install all required node packages
+
+``` (JavaScript)
+npm install *or* npm i
+```
+
 * Run the command below to run the application in development mode
 
 ``` (Javasript)

@@ -10,7 +10,7 @@ export default function MissingItemsComponent() {
       {
          toolRef: 6465,
          teamMember: {
-            memberImage: "/settings.png",
+            memberImage: "/user_alex.jpeg",
             memberName: "Alex Norman",
             memberTrophy: "/logo.png",
          },
@@ -18,7 +18,7 @@ export default function MissingItemsComponent() {
       {
          toolRef: 6466,
          teamMember: {
-            memberImage: "/settings.png",
+            memberImage: "/user_alex.jpeg",
             memberName: "Alex Norman",
             memberTrophy: "/logo.png",
          },
@@ -26,7 +26,7 @@ export default function MissingItemsComponent() {
       {
          toolRef: 6467,
          teamMember: {
-            memberImage: "/settings.png",
+            memberImage: "/user_alex.jpeg",
             memberName: "Alex Norman",
             memberTrophy: "/logo.png",
          },
@@ -48,15 +48,17 @@ export default function MissingItemsComponent() {
 
          <table className="table table-md">
             <thead>
+               <tr>
                <th>Tool Ref</th>
                <th>Team Member</th>
                <th></th>
+               </tr>
             </thead>
 
             <tbody>
                {missingItems.map((missingItem, index) => {
                   return (
-                     <tr key={index}>
+                     <tr key={index} className="flex justify-center items-center">
                         <td>{missingItem.toolRef}</td>
                         <td className="flex items-center justify-center">
                            <Image
