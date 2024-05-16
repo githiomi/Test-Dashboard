@@ -5,11 +5,16 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { RentalTool } from '../lib/interfaces/rental_tool';
 import { getCheckedOutRentals } from '../services/card_table_service';
+import { displayErrorToast } from '../services/toast';
 
 export default function RentalToolsComponent() {
 
    // Get data from external service (API call)
    const rentalTools: RentalTool[] = getCheckedOutRentals();
+
+   const displayToast = () :void => {
+      displayErrorToast();
+   } 
 
    return <div className='bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-solid border-[1px] border-brown'>
 
@@ -73,7 +78,7 @@ export default function RentalToolsComponent() {
                </td>
                <td className='font-bold'>{rentalTool.duration}</td>
                <td>
-                  <button className="btn text-white btn-primary">Details</button>
+                  <button className="btn text-white btn-primary" onClick={displayToast}>Details</button>
                </td>
             </tr>
          })

@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import SideNavigation from "@/app/components/sidenav";
+import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
   style: "normal",
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <div className="min-h-screen flex relative">
 
+          <Toaster position="bottom-right" />
           <SideNavigation />
           {children}
 

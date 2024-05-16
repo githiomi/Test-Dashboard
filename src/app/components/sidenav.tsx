@@ -2,8 +2,8 @@
 
 import clsx from 'clsx';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import React from 'react';
+import { displayErrorToast } from "../services/toast";
 
 interface Navigation {
    navigationIcon: string;
@@ -12,31 +12,27 @@ interface Navigation {
 
 export default function SideNavigation() {
 
-   const [activeState, setActiveState] = React.useState(false);
-
    const navigationLinks: Navigation[] = [
       {
          navigationIcon: '/home.png',
-         navigationState: !activeState
+         navigationState: true
       },
       {
          navigationIcon: '/spare_parts.png',
-         navigationState: activeState
+         navigationState: false
       },
       {
          navigationIcon: '/spanner.png',
-         navigationState: activeState
+         navigationState: false
       },
       {
          navigationIcon: '/packages.png',
-         navigationState: activeState
+         navigationState: false
       }
    ]
 
-   const pathName = usePathname();
-
-   const handleNavigation = () => {
-      setActiveState(!activeState);
+   const displayToast = () => {
+      displayErrorToast("This feature will be implemented soon. Kindly bear with us");
    }
 
    return <nav className="side-navigation w-22 bg-brown min-h-screen flex flex-col justify-between items-center p-6">
@@ -59,7 +55,7 @@ export default function SideNavigation() {
                   }
                   src={navigationLink.navigationIcon}
                   alt='Side Navigation Image'
-                  onClick={handleNavigation}
+                  onClick={displayToast}
                   width={60}
                   height={60} />
             })

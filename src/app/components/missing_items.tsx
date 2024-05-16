@@ -3,9 +3,14 @@
 import Image from "next/image";
 import { MissingItem } from "../lib/interfaces/missing_item";
 import { getMissingRentals } from "../services/card_table_service";
+import { displayErrorToast } from "../services/toast";
 
 export default function MissingItemsComponent() {
+
+   // To simulate API call
    const missingItems: MissingItem[] = getMissingRentals();
+
+   const displayToast = () => displayErrorToast();
 
    return (
       <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-[1px] border-brown min-w-[40%]">
@@ -56,7 +61,7 @@ export default function MissingItemsComponent() {
                            />
                         </td>
                         <td>
-                           <button className="btn btn-primary text-white">
+                           <button className="btn btn-primary text-white" onClick={displayToast}>
                               Details
                            </button>
                         </td>
