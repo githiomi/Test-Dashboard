@@ -1,51 +1,12 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-
-interface RentalTool {
-   workorder: string;
-   toolref: number;
-   teammember: TeamMember;
-   status: 'Completed' | 'In Progress' | 'Not Started';
-   duration: string;
-}
+import { RentalTool } from '../lib/interfaces/rental_tool';
+import { getCheckedOutRentals } from '../services/card_table_service';
 
 export default function RentalToolsComponent() {
 
-   const rentalTools: RentalTool[] = [
-      {
-         workorder: '01',
-         toolref: 6456,
-         teammember: {
-            memberImage: "/user_alex.jpeg",
-            memberName: "Alex Norman",
-            memberTrophy: "/logo.png"
-         },
-         status: 'Completed',
-         duration: '15:00'
-      },
-      {
-         workorder: '02',
-         toolref: 5665,
-         teammember: {
-            memberImage: "/user_razib.jpg",
-            memberName: "Razib Rahman",
-            memberTrophy: "/logo.png"
-         },
-         status: 'In Progress',
-         duration: '05:00'
-      },
-      {
-         workorder: '03',
-         toolref: 1775,
-         teammember: {
-            memberImage: "/user_luke.jpg",
-            memberName: "Luke Norton",
-            memberTrophy: "/logo.png"
-         },
-         status: 'Not Started',
-         duration: '00:00'
-      }
-   ]
+   // Get data from external service (API call)
+   const rentalTools: RentalTool[] = getCheckedOutRentals();
 
    return <div className='bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-solid border-[1px] border-brown'>
 
@@ -77,22 +38,22 @@ export default function RentalToolsComponent() {
                <td>
                   <span className="bg-gray px-2 py-1 rounded-md">{rentalTool.toolref}</span>
                </td>
-               <td className='flex items-center justify-center gap-3 mt-2'>
+               <td className='flex items-center justify-center mt-2'>
                   <Image
                      src={rentalTool.teammember.memberImage}
                      alt="Team Member Iamge"
                      width={40}
                      height={40}
-                     className="bg-black rounded-full" />
+                     className="bg-black rounded-full mx-2" />
 
                   {rentalTool.teammember.memberName}
 
                   <Image
                      src={rentalTool.teammember.memberTrophy}
                      alt="Team Member Trophy"
-                     width={20}
-                     height={20}
-                     className="rounded" />
+                     width={15}
+                     height={15}
+                     className="rounded ml-1" />
                </td>
                <td>
                   <div className="flex items-center gap-2">

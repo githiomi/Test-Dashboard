@@ -1,19 +1,9 @@
 import Image from "next/image";
+import { getReception } from "../services/card_information_service";
 
 export default function ReceptionSummaryPage() {
 
-   const summaryItems: ReceptionSummary[] = [
-      {
-         imageUrl: "/packages.png",
-         summaryName: "Packages Received",
-         summaryQuantity: 10
-      },
-      {
-         imageUrl: "/packages.png",
-         summaryName: "Processed Packages",
-         summaryQuantity: 5
-      }
-   ];
+   const summaryItems: ReceptionSummary[] = getReception();
    return (
       <div className="grow rounded-badge px-10 py-2 m-5 flex flex-col min-h-full">
 

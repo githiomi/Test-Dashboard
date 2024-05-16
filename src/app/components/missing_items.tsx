@@ -1,37 +1,9 @@
 import Image from "next/image";
-
-interface MissingItem {
-   toolRef: number;
-   teamMember: TeamMember;
-}
+import { MissingItem } from "../lib/interfaces/missing_item";
+import { getMissingRentals } from "../services/card_table_service";
 
 export default function MissingItemsComponent() {
-   const missingItems: MissingItem[] = [
-      {
-         toolRef: 6465,
-         teamMember: {
-            memberImage: "/user_alex.jpeg",
-            memberName: "Alex Norman",
-            memberTrophy: "/logo.png",
-         },
-      },
-      {
-         toolRef: 6466,
-         teamMember: {
-            memberImage: "/user_alex.jpeg",
-            memberName: "Alex Norman",
-            memberTrophy: "/logo.png",
-         },
-      },
-      {
-         toolRef: 6467,
-         teamMember: {
-            memberImage: "/user_alex.jpeg",
-            memberName: "Alex Norman",
-            memberTrophy: "/logo.png",
-         },
-      },
-   ];
+   const missingItems: MissingItem[] = getMissingRentals();
 
    return (
       <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-[1px] border-brown min-w-[40%]">

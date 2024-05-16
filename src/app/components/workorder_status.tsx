@@ -1,28 +1,13 @@
 import clsx from "clsx";
 import DonutChart from "./chart";
+import { getWorkOrderStatus } from "../services/indicator_widget_service";
+import { WorkOrder } from "../lib/interfaces/work_order";
 
-
-interface WorkOrder {
-   status: 'Completed' | 'Work In Progress' | 'Due';
-   number: number;
-}
 
 export default function WorkOrderStatusPage() {
 
-   const workOrders: WorkOrder[] = [
-      {
-         status: 'Completed',
-         number: 7
-      },
-      {
-         status: 'Work In Progress',
-         number: 3
-      },
-      {
-         status: 'Due',
-         number: 2
-      }
-   ]
+   const workOrders: WorkOrder[] = getWorkOrderStatus();
+
    return (
       <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-[1px] border-brown grow flex flex-col">
 

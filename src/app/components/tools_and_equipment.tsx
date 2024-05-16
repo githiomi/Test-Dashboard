@@ -1,26 +1,11 @@
 import Image from 'next/image';
 import clsx from 'clsx';
-
-interface ToolsAndEquipment {
-   toolIcon: string;
-   toolName: string;
-   progress: number;
-}
+import { ToolsAndEquipment } from '../lib/interfaces/tool_and_equipment';
+import { getToolEquipmentAvailability } from '../services/card_information_service';
 
 export default function ToolsAndEquipmentAvailability() {
 
-   const toolsAndEquipment: ToolsAndEquipment[] = [
-      {
-         toolIcon: '/spanner.png',
-         toolName: 'Rental Items',
-         progress: 50
-      },
-      {
-         toolIcon: '/spare_parts.png',
-         toolName: 'Spare Parts',
-         progress: 75
-      }
-   ];
+   const toolsAndEquipment: ToolsAndEquipment[] = getToolEquipmentAvailability();
 
    return (
       <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-[1px] border-brown grow">

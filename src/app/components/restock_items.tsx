@@ -1,30 +1,9 @@
-import Image from 'next/image';
-
-interface RestockItem {
-   toolref: number;
-   toolOrEquipment: string;
-   status: 'Low' | 'None';
-}
+import { RestockItem } from "../lib/interfaces/restock_item"
+import { getItemsToRestock } from "../services/card_table_service"
 
 export default function RestockItemsComponent() {
 
-   const restockItems: RestockItem[] = [
-      {
-         toolref: 6465,
-         toolOrEquipment: 'Screws',
-         status: 'Low',
-      },
-      {
-         toolref: 6466,
-         toolOrEquipment: 'Wires (Electrical)',
-         status: 'None',
-      },
-      {
-         toolref: 6467,
-         toolOrEquipment: 'Bolts',
-         status: 'None',
-      }
-   ]
+   const restockItems: RestockItem[] = getItemsToRestock();
 
    return <div className='bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-[1px] border-brown min-w-[60%]'>
 
