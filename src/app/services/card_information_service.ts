@@ -20,12 +20,14 @@ export const getReception = (): ReceptionSummary[] => {
       {
          imageUrl: "/packages.png",
          summaryName: "Packages Received",
-         summaryQuantity: 10
+         summaryQuantity: 10,
+         completed: false
       },
       {
          imageUrl: "/packages.png",
          summaryName: "Processed Packages",
-         summaryQuantity: 5
+         summaryQuantity: 5,
+         completed: true
       }
    ]
 }

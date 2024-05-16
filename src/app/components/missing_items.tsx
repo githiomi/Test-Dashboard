@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import { MissingItem } from "../lib/interfaces/missing_item";
 import { getMissingRentals } from "../services/card_table_service";

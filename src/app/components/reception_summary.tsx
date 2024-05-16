@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import { getReception } from "../services/card_information_service";
 
@@ -17,11 +19,20 @@ export default function ReceptionSummaryPage() {
                   return <div key={index}
                      className="summary-item w-full flex items-center justify-between">
 
-                     <Image
-                        src={summaryItem.imageUrl}
-                        alt="Packages Image"
-                        width={70}
-                        height={70} />
+                     <div className="relative">
+                        <Image
+                           src={summaryItem.imageUrl}
+                           alt="Packages Image"
+                           width={70}
+                           height={70} />
+
+                        <Image src={'/tick.png'}
+                           alt="Completed Green Tick"
+                           className="absolute bottom-[-.5rem] right-[-.5rem]"
+                           width={20}
+                           height={15}
+                           hidden={!summaryItem.completed} />
+                     </div>
 
                      <p className="font-bold">{summaryItem.summaryName}</p>
 

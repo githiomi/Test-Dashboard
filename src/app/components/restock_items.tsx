@@ -1,6 +1,7 @@
+'use client';
+
 import { RestockItem } from "../lib/interfaces/restock_item"
 import { getItemsToRestock } from "../services/card_table_service"
-
 export default function RestockItemsComponent() {
 
    const restockItems: RestockItem[] = getItemsToRestock();

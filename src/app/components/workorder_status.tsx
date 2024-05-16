@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from "clsx";
 import DonutChart from "./chart";
 import { getWorkOrderStatus } from "../services/indicator_widget_service";

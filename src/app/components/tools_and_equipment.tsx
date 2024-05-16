@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import clsx from 'clsx';
 import { ToolsAndEquipment } from '../lib/interfaces/tool_and_equipment';

@@ -1,3 +1,6 @@
+'use client';
+
+
 import clsx from 'clsx';
 import Image from 'next/image';
 import { RentalTool } from '../lib/interfaces/rental_tool';
