@@ -18,7 +18,7 @@ The Figma design below shows the expected output of the NextJs project
 
 Following the design requirements, the output of this project looks as follows:
 
-![Website Preview](./public//next.svg)
+![Website Preview](./public/preview.png)
 
 ## DEVELOPMENT STACK
 
