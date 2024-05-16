@@ -31,17 +31,17 @@ export default function SideNavigation() {
       }
    ]
 
-   const displayToast = () => {
-      displayErrorToast("This feature will be implemented soon. Kindly bear with us");
-   }
+   const displayToast = () => displayErrorToast("This feature will be implemented soon. Kindly bear with us");
+   const home = () => console.log("Home");
 
    return <nav className="side-navigation w-22 bg-brown min-h-screen flex flex-col justify-between items-center p-6">
 
       <Image
          src='/logo.png'
          alt='Side Navigation Image'
-         width='50'
-         height='50' />
+         width={50}
+         height={50}
+         className='cursor-pointer' />
 
       <div className="icons flex flex-col gap-2">
          {
@@ -55,7 +55,7 @@ export default function SideNavigation() {
                   }
                   src={navigationLink.navigationIcon}
                   alt='Side Navigation Image'
-                  onClick={displayToast}
+                  onClick={index != 0 ? displayToast : home}
                   width={60}
                   height={60} />
             })
@@ -66,8 +66,8 @@ export default function SideNavigation() {
          className='bg-white rounded-full p-3 cursor-pointer'
          src='/settings.png'
          alt='Side Navigation Image'
-         width='50'
-         height='50' />
+         width={50}
+         height={50} />
 
    </nav>
 

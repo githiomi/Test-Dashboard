@@ -18,8 +18,8 @@ export default function MissingItemsComponent() {
             <Image
                src="/warning.png"
                alt="Rental Tools"
-               width="50"
-               height="50"
+               width={50}
+               height={50}
                className="bg-white"
             />
             <h1 className="text-3xl font-bold">Missing Items</h1>
@@ -44,7 +44,7 @@ export default function MissingItemsComponent() {
                         <td className="mt-2 grow flex items-center justify-center gap-2">
                            <Image
                               src={missingItem.teamMember.memberImage}
-                              alt="Team Member Iamge"
+                              alt="Team Member Image"
                               width={40}
                               height={40}
                               className="rounded-full"
@@ -55,8 +55,8 @@ export default function MissingItemsComponent() {
                            <Image
                               src={missingItem.teamMember.memberTrophy}
                               alt="Team Member Trophy"
-                              width="20"
-                              height="20"
+                              width={20}
+                              height={20}
                               className="rounded"
                            />
                         </td>

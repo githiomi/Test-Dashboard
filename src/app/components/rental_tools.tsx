@@ -22,8 +22,8 @@ export default function RentalToolsComponent() {
          <Image
             src="/settings.png"
             alt='Rental Tools'
-            width='40'
-            height='40'
+            width={40}
+            height={4}
             className='bg-white' />
          <h1 className='text-3xl font-bold'>Rental Tools</h1>
       </div>
