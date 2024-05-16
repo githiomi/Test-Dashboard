@@ -47,7 +47,7 @@ export default function RentalToolsComponent() {
       }
    ]
 
-   return <div className='bg-white text-black rounded-lg shadow-xl hover:shadow-2xl px-10 py-5 m-5'>
+   return <div className='bg-white text-black rounded-lg shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-solid border-[1px] border-brown'>
 
       <div className='flex items-center gap-5 my-5'>
          <Image
