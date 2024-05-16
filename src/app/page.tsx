@@ -7,7 +7,7 @@ import ReceptionSummaryPage from "./components/reception_summary";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full flex-col">
+    <main className="left-24 top-0 min-h-screen flex-col grow">
 
       <div className="topRow flex w-full">
         {/* The Rental Tools Component */}
@@ -15,7 +15,7 @@ export default function Home() {
 
         {/* Work Order Status Component */}
         <WorkOrderStatusPage />
-        
+
       </div>
 
       <div className="middleRow flex">
@@ -23,12 +23,15 @@ export default function Home() {
         {/* The Missing Items Component */}
         <MissingItemsComponent />
 
+        {/* Tools and Equipment Availability Component */}
         <ToolsAndEquipmentAvailability />
       </div>
 
       <div className="bottomRow flex">
+        {/* Restock Items Component */}
         <RestockItemsComponent />
 
+        {/* Reception summary Component */}
         <ReceptionSummaryPage />
       </div>
 

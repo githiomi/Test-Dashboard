@@ -34,7 +34,7 @@ export default function MissingItemsComponent() {
    ];
 
    return (
-      <div className="bg-white text-black rounded-lg shadow-xl hover:shadow-2xl px-10 py-5 m-5">
+      <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-[1px] border-brown min-w-[40%]">
          <div className="flex items-center gap-5 my-5">
             <Image
                src="/warning.png"
@@ -43,33 +43,35 @@ export default function MissingItemsComponent() {
                height="50"
                className="bg-white"
             />
-            <h1 className="text-2xl font-bold">Missing Items</h1>
+            <h1 className="text-3xl font-bold">Missing Items</h1>
          </div>
 
-         <table className="table table-md">
+         <table className="table table-md text-center">
             <thead>
                <tr>
-               <th>Tool Ref</th>
-               <th>Team Member</th>
-               <th></th>
+                  <th>Tool Ref</th>
+                  <th>Team Member</th>
+                  <th></th>
                </tr>
             </thead>
 
             <tbody>
                {missingItems.map((missingItem, index) => {
                   return (
-                     <tr key={index} className="flex justify-center items-center">
-                        <td>{missingItem.toolRef}</td>
-                        <td className="flex items-center justify-center">
+                     <tr key={index}>
+                        <td>
+                           <span className="bg-gray px-2 py-1 rounded-md">{missingItem.toolRef}</span>
+                        </td>
+                        <td className="mt-2 grow flex items-center justify-center gap-2">
                            <Image
                               src={missingItem.teamMember.memberImage}
                               alt="Team Member Iamge"
-                              width="20"
-                              height="20"
-                              className="rounded"
+                              width={40}
+                              height={40}
+                              className="rounded-full"
                            />
 
-                           {missingItem.teamMember.memberName}
+                           <p className="text-md">{missingItem.teamMember.memberName}</p>
 
                            <Image
                               src={missingItem.teamMember.memberTrophy}
@@ -80,7 +82,7 @@ export default function MissingItemsComponent() {
                            />
                         </td>
                         <td>
-                           <button className="btn btn-outline btn-primary">
+                           <button className="btn btn-primary text-white">
                               Details
                            </button>
                         </td>

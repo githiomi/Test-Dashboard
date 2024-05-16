@@ -29,12 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="light-mode">
       <body className={poppins.className}>
-        <div className="min-h-screen flex">
+        <div className="min-h-screen flex relative">
 
           <SideNavigation />
           {children}
 
         </div>
+
       </body>
     </html>
   );

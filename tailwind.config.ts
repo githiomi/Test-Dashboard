@@ -18,15 +18,16 @@ const config: Config = {
       'brown': "#897d7d",
       'darkbrown': "#665c5c",
       'black': "#000000",
-      'white' : "#FFFFFF",
-      'gray' : '#dddfdf',
-      'green' : "#42b667",
-      'orange' : "#eb7600"
+      'white': "#FFFFFF",
+      'gray': '#dddfdf',
+      'green': "#42b667",
+      'orange': "#eb7600",
+      'red': "#f82c1d",
     }
   },
   plugins: [
-    require("daisyui")
+    require("daisyui"),
   ],
-  
+
 };
 export default config;

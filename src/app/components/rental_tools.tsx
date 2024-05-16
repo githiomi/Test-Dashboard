@@ -2,19 +2,19 @@ import clsx from 'clsx';
 import Image from 'next/image';
 
 interface RentalTool {
-   workorder:string;
-   toolref:number;
-   teammember:TeamMember;
+   workorder: string;
+   toolref: number;
+   teammember: TeamMember;
    status: 'Completed' | 'In Progress' | 'Not Started';
-   duration:string;
+   duration: string;
 }
 
 export default function RentalToolsComponent() {
 
-   const rentalTools : RentalTool[] = [
+   const rentalTools: RentalTool[] = [
       {
-         workorder:'01',
-         toolref:6456,
+         workorder: '01',
+         toolref: 6456,
          teammember: {
             memberImage: "/user_alex.jpeg",
             memberName: "Alex Norman",
@@ -24,8 +24,8 @@ export default function RentalToolsComponent() {
          duration: '15:00'
       },
       {
-         workorder:'02',
-         toolref:5665,
+         workorder: '02',
+         toolref: 5665,
          teammember: {
             memberImage: "/user_razib.jpg",
             memberName: "Razib Rahman",
@@ -35,8 +35,8 @@ export default function RentalToolsComponent() {
          duration: '05:00'
       },
       {
-         workorder:'03',
-         toolref:1775,
+         workorder: '03',
+         toolref: 1775,
          teammember: {
             memberImage: "/user_luke.jpg",
             memberName: "Luke Norton",
@@ -47,7 +47,7 @@ export default function RentalToolsComponent() {
       }
    ]
 
-   return <div className='bg-white text-black rounded-lg shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-solid border-[1px] border-brown'>
+   return <div className='bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-solid border-[1px] border-brown'>
 
       <div className='flex items-center gap-5 my-5'>
          <Image
@@ -56,7 +56,7 @@ export default function RentalToolsComponent() {
             width='40'
             height='40'
             className='bg-white' />
-         <h1 className='text-2xl font-bold'>Rental Tools</h1>
+         <h1 className='text-3xl font-bold'>Rental Tools</h1>
       </div>
 
       <table className="table table-md">
@@ -70,48 +70,50 @@ export default function RentalToolsComponent() {
                <th></th>
             </tr>
          </thead>
-      
-         <tbody>{rentalTools.map( (rentalTool, index) => {
-                  return <tr key={index} className='text-center'>
-                           <td>{rentalTool.workorder}</td>
-                           <td>
-                              <span className="bg-gray px-2 py-1 rounded-md">{rentalTool.toolref}</span>
-                           </td>
-                           <td className='flex items-center justify-center gap-[1rem] mt-1'>
-                              <Image 
-                                 src={rentalTool.teammember.memberImage}
-                                 alt="Team Member Iamge"
-                                 width={50}
-                                 height={100}
-                                 className="bg-black rounded-full" />
 
-                              {rentalTool.teammember.memberName}
+         <tbody>{rentalTools.map((rentalTool, index) => {
+            return <tr key={index}>
+               <td>{rentalTool.workorder}</td>
+               <td>
+                  <span className="bg-gray px-2 py-1 rounded-md">{rentalTool.toolref}</span>
+               </td>
+               <td className='flex items-center justify-center gap-3 mt-2'>
+                  <Image
+                     src={rentalTool.teammember.memberImage}
+                     alt="Team Member Iamge"
+                     width={40}
+                     height={40}
+                     className="bg-black rounded-full" />
 
-                              <Image 
-                                 src={rentalTool.teammember.memberTrophy}
-                                 alt="Team Member Trophy"
-                                 width="40"
-                                 height="50"
-                                 className="rounded" />
-                           </td>
-                           <td>
-                              <div className={clsx(
-                                 "status rounded-full w-3 h-3 border-solid p-2 border-1",
-                                 {
-                                    'bg-orange' : rentalTool.status == 'Not Started',
-                                    'bg-primary' : rentalTool.status == 'In Progress',
-                                    'bg-green' : rentalTool.status == 'Completed',
-                                 }
-                              )}></div>
-                              {rentalTool.status}
-                           </td>
-                           <td>{rentalTool.duration}</td>
-                           <td>
-                              <button className="btn text-white btn-primary">Details</button>
-                           </td>
-                  </tr>
-               })
-            }
+                  {rentalTool.teammember.memberName}
+
+                  <Image
+                     src={rentalTool.teammember.memberTrophy}
+                     alt="Team Member Trophy"
+                     width={20}
+                     height={20}
+                     className="rounded" />
+               </td>
+               <td>
+                  <div className="flex items-center gap-2">
+                     <div className={clsx(
+                        "status rounded-full w-3 h-3 border-solid p-2 border-1",
+                        {
+                           'bg-orange': rentalTool.status == 'Not Started',
+                           'bg-primary': rentalTool.status == 'In Progress',
+                           'bg-green': rentalTool.status == 'Completed',
+                        }
+                     )}></div>
+                     {rentalTool.status}
+                  </div>
+               </td>
+               <td className='font-bold'>{rentalTool.duration}</td>
+               <td>
+                  <button className="btn text-white btn-primary">Details</button>
+               </td>
+            </tr>
+         })
+         }
          </tbody>
       </table>
    </div>

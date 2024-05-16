@@ -23,9 +23,9 @@ export default function ToolsAndEquipmentAvailability() {
    ];
 
    return (
-      <div className="bg-white text-black rounded-lg shadow-xl hover:shadow-2xl px-10 py-5 m-5">
+      <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-[1px] border-brown grow">
 
-         <h1 className="text-2xl font-bold">Tools And Equipment Availability</h1>
+         <h1 className="text-3xl font-bold my-3">Tools And Equipment Availability</h1>
 
          <table className="table table-lg">
 
@@ -51,18 +51,19 @@ export default function ToolsAndEquipmentAvailability() {
 
                      <td><div className={clsx('radial-progress',
                         {
-                           'bg-green text-white': index == 0,
-                           'bg-orange text-white': index == 1,
+                           'bg-orange text-white': index == 0,
+                           'bg-green text-white': index == 1,
                         }
                      )}
                         style={{ "--value": toolsAndEquipment.progress }}
                         role="progressbar">{toolsAndEquipment.progress}%</div></td>
                   </tr>
+
                })}
             </tbody>
 
          </table>
 
-      </div>
+      </div >
    );
 }
