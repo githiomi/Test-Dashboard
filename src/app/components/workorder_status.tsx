@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import DonutChart from "./chart";
-import { getWorkOrderStatus } from "../services/indicator_widget_service";
+import { getWorkOrderStatus } from "../api/indicator_widget_service";
 import { WorkOrder } from "../lib/interfaces/work_order";
 
 

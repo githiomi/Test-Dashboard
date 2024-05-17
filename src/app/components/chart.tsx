@@ -6,6 +6,7 @@ export default function DonutChart() {
          <Image
             src={'/donut_chart.png'}
             alt='This is the donut chart'
+            quality={100}
             width={150}
             height={150} />
       </div>

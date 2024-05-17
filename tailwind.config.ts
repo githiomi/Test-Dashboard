@@ -23,7 +23,15 @@ const config: Config = {
       'green': "#42b667",
       'orange': "#eb7600",
       'red': "#f82c1d",
-    }
+    },
+    // Screen Sizes
+    /*
+    320px — 480px: Mobile devices
+    481px — 768px: iPads, Tablets
+    769px — 1024px: Small screens, laptops
+    1025px — 1200px: Desktops, large screens
+    1201px and more —  Extra large screens, TV.
+    */
   },
   plugins: [
     require("daisyui"),

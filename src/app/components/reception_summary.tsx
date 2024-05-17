@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { getReception } from "../services/card_information_service";
+import { getReception } from "../api/card_information_service";
 
 export default function ReceptionSummaryPage() {
 
