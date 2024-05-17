@@ -4,17 +4,13 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import { RentalTool } from '../lib/interfaces/rental_tool';
-import { getCheckedOutRentals } from '../services/card_table_service';
-import { displayErrorToast } from '../services/toast';
+import { getCheckedOutRentals } from '../api/card_table_service';
+import { displayErrorToast } from '../api/toast';
 
 export default function RentalToolsComponent() {
 
    // Get data from external service (API call)
    const rentalTools: RentalTool[] = getCheckedOutRentals();
-
-   const displayToast = () :void => {
-      displayErrorToast();
-   } 
 
    return <div className='bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-solid border-[1px] border-brown'>
 
@@ -28,7 +24,7 @@ export default function RentalToolsComponent() {
          <h1 className='text-3xl font-bold'>Rental Tools</h1>
       </div>
 
-      <table className="table table-md">
+      <table className="table table-xs lg:table-md">
          <thead>
             <tr>
                <th>Work Order</th>
@@ -52,7 +48,7 @@ export default function RentalToolsComponent() {
                      alt="Team Member Iamge"
                      width={40}
                      height={40}
-                     className="bg-black rounded-full mx-2" />
+                     className="bg-black rounded-full mx-1 lg:mx-2" />
 
                   {rentalTool.teammember.memberName}
 
@@ -66,7 +62,7 @@ export default function RentalToolsComponent() {
                <td>
                   <div className="flex items-center gap-2">
                      <div className={clsx(
-                        "status rounded-full w-3 h-3 border-solid p-2 border-1",
+                        "status rounded-full border-solid p-[5px] lg:p-2 border-1",
                         {
                            'bg-orange': rentalTool.status == 'Not Started',
                            'bg-primary': rentalTool.status == 'In Progress',
@@ -78,7 +74,7 @@ export default function RentalToolsComponent() {
                </td>
                <td className='font-bold'>{rentalTool.duration}</td>
                <td>
-                  <button className="btn text-white btn-primary" onClick={displayToast}>Details</button>
+                  <button className="btn text-white btn-primary" onClick={() => displayErrorToast()}>Details</button>
                </td>
             </tr>
          })

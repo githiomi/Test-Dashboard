@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
-import { displayErrorToast } from "../services/toast";
+import { displayErrorToast } from "../api/toast";
 
 interface Navigation {
    navigationIcon: string;
@@ -31,10 +31,7 @@ export default function SideNavigation() {
       }
    ]
 
-   const displayToast = () => displayErrorToast("This feature will be implemented soon. Kindly bear with us");
-   const home = () => console.log("Home");
-
-   return <nav className="side-navigation w-22 bg-brown min-h-screen flex flex-col justify-between items-center p-6">
+   return <nav className="side-navigation w-22 bg-brown min-h-screen h-[100%] flex flex-col justify-between items-center p-6 fixed top-0 left-0 z-10">
 
       <Image
          src='/logo.png'
@@ -55,7 +52,7 @@ export default function SideNavigation() {
                   }
                   src={navigationLink.navigationIcon}
                   alt='Side Navigation Image'
-                  onClick={index != 0 ? displayToast : home}
+                  onClick={() => index != 0 && displayErrorToast("This feature will be implemented soon. Kindly bear with us")}
                   width={60}
                   height={60} />
             })

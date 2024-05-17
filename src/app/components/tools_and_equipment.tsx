@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import clsx from 'clsx';
 import { ToolsAndEquipment } from '../lib/interfaces/tool_and_equipment';
-import { getToolEquipmentAvailability } from '../services/card_information_service';
+import { getToolEquipmentAvailability } from '../api/card_information_service';
 
 export default function ToolsAndEquipmentAvailability() {
 
@@ -36,7 +36,7 @@ export default function ToolsAndEquipmentAvailability() {
 
                      <td>{toolsAndEquipment.toolName}</td>
 
-                     <td><div className={clsx('radial-progress',
+                     <td><div className={clsx('radial-progress w-14 h-14 text-sm md:w-20 md:h-20 md:text-base',
                         {
                            'bg-orange text-white': index == 0,
                            'bg-green text-white': index == 1,
