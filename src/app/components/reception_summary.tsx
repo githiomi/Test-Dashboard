@@ -1,11 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import { getReception } from "../api/card_information_service";
 
-export default function ReceptionSummaryPage() {
+export default function ReceptionSummaryPage({ rowItems: summaryItems }: CardProps<ReceptionSummary[]>) {
 
-   const summaryItems: ReceptionSummary[] = getReception();
    return (
       <div className="grow rounded-badge px-10 py-2 m-5 flex flex-col min-h-full">
 

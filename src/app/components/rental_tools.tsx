@@ -1,16 +1,11 @@
 'use client';
 
-
 import clsx from 'clsx';
 import Image from 'next/image';
 import { RentalTool } from '../lib/interfaces/rental_tool';
-import { getCheckedOutRentals } from '../api/card_table_service';
 import { displayErrorToast } from '../api/toast';
 
-export default function RentalToolsComponent() {
-
-   // Get data from external service (API call)
-   const rentalTools: RentalTool[] = getCheckedOutRentals();
+export default function RentalToolsComponent({ rowItems: rentalTools }: CardProps<RentalTool[]>) {
 
    return <div className='bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-solid border-[1px] border-brown'>
 

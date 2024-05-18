@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { MissingItem } from "../lib/interfaces/missing_item";
-import { getMissingRentals } from "../api/card_table_service";
 import { displayErrorToast } from "../api/toast";
 
-export default function MissingItemsComponent() {
+type Props = {
+   missingItems: MissingItem[]
+}
 
-   // To simulate API call
-   const missingItems: MissingItem[] = getMissingRentals();
+export default function MissingItemsComponent({ rowItems: missingItems }: CardProps<MissingItem[]>) {
 
    return (
       <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-2 m-5 border-[1px] border-brown min-w-[40%]">

@@ -3,11 +3,8 @@
 import Image from 'next/image';
 import clsx from 'clsx';
 import { ToolsAndEquipment } from '../lib/interfaces/tool_and_equipment';
-import { getToolEquipmentAvailability } from '../api/card_information_service';
 
-export default function ToolsAndEquipmentAvailability() {
-
-   const toolsAndEquipment: ToolsAndEquipment[] = getToolEquipmentAvailability();
+export default function ToolsAndEquipmentAvailability({ rowItems: toolsAndEquipment }: CardProps<ToolsAndEquipment[]>) {
 
    return (
       <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-[1px] border-brown grow">
