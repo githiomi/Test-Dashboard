@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { RentalTool } from '../lib/interfaces/rental_tool';
 import { displayErrorToast } from '../api/toast';
+import Button from './button';
 
 export default function RentalToolsComponent({ rowItems: rentalTools }: CardProps<RentalTool[]>) {
 
@@ -69,7 +70,7 @@ export default function RentalToolsComponent({ rowItems: rentalTools }: CardProp
                </td>
                <td className='font-bold'>{rentalTool.duration}</td>
                <td>
-                  <button className="btn text-white btn-primary" onClick={() => displayErrorToast()}>Details</button>
+                  <Button buttonText='Details' />
                </td>
             </tr>
          })

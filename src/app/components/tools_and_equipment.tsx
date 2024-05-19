@@ -35,11 +35,14 @@ export default function ToolsAndEquipmentAvailability({ rowItems: toolsAndEquipm
 
                      <td><div className={clsx('radial-progress w-14 h-14 text-sm md:w-20 md:h-20 md:text-base',
                         {
-                           'bg-orange text-white': index == 0,
-                           'bg-green text-white': index == 1,
+                           'text-orange': index == 0,
+                           'text-green': index == 1,
                         }
                      )}
-                        style={{ "--value": toolsAndEquipment.progress }}
+                        style={{
+                           "--value": toolsAndEquipment.progress,
+                           "--thickness": '5px'
+                        }}
                         role="progressbar">{toolsAndEquipment.progress}%</div></td>
                   </tr>
 

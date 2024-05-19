@@ -2,6 +2,7 @@
 
 import { RestockItem } from "../lib/interfaces/restock_item"
 import { displayErrorToast } from "../api/toast";
+import Button from "./button";
 
 export default function RestockItemsComponent({ rowItems: restockItems }: CardProps<RestockItem[]>) {
 
@@ -36,7 +37,7 @@ export default function RestockItemsComponent({ rowItems: restockItems }: CardPr
                   {restockItem.status}
                </td>
                <td>
-                  <button className="btn text-white btn-primary" onClick={() => displayErrorToast}>Details</button>
+                  <Button buttonText='Details' />
                </td>
             </tr>
          })
