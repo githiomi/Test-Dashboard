@@ -1,12 +1,10 @@
 'use client';
 
 import { RestockItem } from "../lib/interfaces/restock_item"
-import { getItemsToRestock } from "../api/card_table_service"
 import { displayErrorToast } from "../api/toast";
-export default function RestockItemsComponent() {
+import Button from "./button";
 
-   // To simulate API call
-   const restockItems: RestockItem[] = getItemsToRestock();
+export default function RestockItemsComponent({ rowItems: restockItems }: CardProps<RestockItem[]>) {
 
    return <div className='bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-[1px] border-brown min-w-[60%]'>
 
@@ -39,7 +37,7 @@ export default function RestockItemsComponent() {
                   {restockItem.status}
                </td>
                <td>
-                  <button className="btn text-white btn-primary" onClick={() => displayErrorToast}>Details</button>
+                  <Button buttonText='Details' />
                </td>
             </tr>
          })

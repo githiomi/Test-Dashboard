@@ -2,13 +2,10 @@
 
 import clsx from "clsx";
 import DonutChart from "./chart";
-import { getWorkOrderStatus } from "../api/indicator_widget_service";
 import { WorkOrder } from "../lib/interfaces/work_order";
 
 
-export default function WorkOrderStatusPage() {
-
-   const workOrders: WorkOrder[] = getWorkOrderStatus();
+export default function WorkOrderStatusPage({ rowItems: workOrders }: CardProps<WorkOrder[]>) {
 
    return (
       <div className="bg-white text-black rounded-badge shadow-xl hover:shadow-2xl px-10 py-5 m-5 border-[1px] border-brown grow flex flex-col">
