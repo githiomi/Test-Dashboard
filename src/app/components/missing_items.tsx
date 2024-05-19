@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { MissingItem } from "../lib/interfaces/missing_item";
-import { displayErrorToast } from "../api/toast";
+import Button from "./button";
 
 type Props = {
    missingItems: MissingItem[]
@@ -59,9 +59,7 @@ export default function MissingItemsComponent({ rowItems: missingItems }: CardPr
                            />
                         </td>
                         <td>
-                           <button className="btn btn-primary text-white" onClick={() => displayErrorToast()}>
-                              Details
-                           </button>
+                           <Button buttonText='Details' />
                         </td>
                      </tr>
                   );
