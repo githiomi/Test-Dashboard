@@ -45,7 +45,7 @@ export default function SideNavigation() {
             navigationLinks.map((navigationLink, index) => {
                return <Image
                   key={index}
-                  className={clsx('p-3 rounded-lg',
+                  className={clsx('p-3 rounded-lg cursor-pointer',
                      {
                         'bg-darkbrown': navigationLink.navigationState == true
                      })
@@ -63,6 +63,7 @@ export default function SideNavigation() {
          className='bg-white rounded-full p-3 cursor-pointer'
          src='/settings.png'
          alt='Side Navigation Image'
+         onClick={() => displayErrorToast("The settings page is still under development")}
          width={50}
          height={50} />
 
